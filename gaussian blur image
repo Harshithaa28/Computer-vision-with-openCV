@@ -1,0 +1,19 @@
+import cv2
+
+# Step 1: Read the image
+img = cv2.imread("image.jpg")
+
+# Step 2: Check if image is loaded
+if img is None:
+    print("Error: Image not found")
+else:
+    # Step 3: Apply Gaussian Blur
+    blur = cv2.GaussianBlur(img, (5, 5), 0)
+
+    # Step 4: Display images
+    cv2.imshow("Original Image", img)
+    cv2.imshow("Gaussian Blurred Image", blur)
+
+    # Step 5: Wait and close windows
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
