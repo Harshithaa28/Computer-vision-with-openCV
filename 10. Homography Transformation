@@ -1,0 +1,13 @@
+import cv2
+import numpy as np
+
+img = cv2.imread("image.jpg")
+
+pts1 = np.float32([[10,10],[200,10],[10,200],[200,200]])
+pts2 = np.float32([[0,0],[300,0],[0,300],[300,300]])
+
+H, _ = cv2.findHomography(pts1, pts2)
+out = cv2.warpPerspective(img, H, (300,300))
+
+cv2.imshow("Homography", out)
+cv2.waitKey(0)
