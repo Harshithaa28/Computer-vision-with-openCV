@@ -1,0 +1,13 @@
+import cv2
+
+cap = cv2.VideoCapture("video.mp4")
+
+while cap.isOpened():
+    ret, frame = cap.read()
+    if not ret:
+        break
+    cv2.imshow("Video", frame)
+    cv2.waitKey(100)   # slow motion (use 10 for fast)
+
+cap.release()
+cv2.destroyAllWindows()
